@@ -1,6 +1,6 @@
 %define module  virtinst
 %define name    python-%{name}
-%define version 0.101.0
+%define version 0.103.0
 %define release %mkrel 1
 
 Name: 		python-%{module}
@@ -9,7 +9,7 @@ Release: 	%{release}
 Summary:    Python modules for starting Xen guest installations
 License:    GPL
 Group: 		Development/Python
-Url:        http://hg.et.redhat.com/virt/applications/xeninst--devel
+Url:        http://virt-manager.et.redhat.com/download.html
 Source:     %{module}-%{version}.tar.bz2
 Requires:       python-libvirt >= 0.1.4-4
 Requires:       python-urlgrabber
@@ -54,5 +54,3 @@ rm -rf %{buildroot}
 %{python_sitelib}/*.egg-info
 %{_sbindir}/virt-install
 %{_sbindir}/xenguest-install
-
-
