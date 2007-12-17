@@ -16,7 +16,6 @@ Requires:       python-urlgrabber
 BuildRequires:  python-devel
 BuildArch:      noarch
 ExcludeArch:    ppc ppc64 s390 s390x 
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 virtinst is a module to help in starting installations of Fedora/Red
