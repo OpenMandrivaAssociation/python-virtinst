@@ -15,6 +15,7 @@ Requires:       python-libvirt >= 0.1.4-4
 Requires:       python-urlgrabber
 BuildRequires:  python-devel
 BuildRequires:  python-libvirt
+BuildRequires:  python-libxml2
 BuildArch:      noarch
 ExcludeArch:    ppc ppc64 s390 s390x 
 BuildRoot:      %{_tmppath}/%{name}-%{version}
