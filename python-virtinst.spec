@@ -1,7 +1,7 @@
 %define module  virtinst
 %define name    python-%{name}
-%define version 0.300.1
-%define release %mkrel 5
+%define version 0.300.3
+%define release %mkrel 1
 
 Name: 		python-%{module}
 Version: 	%{version}
@@ -14,6 +14,7 @@ Source:     http://virt-manager.et.redhat.com/download/sources/virtinst/%{module
 Requires:       python-libvirt >= 0.1.4-4
 Requires:       python-urlgrabber
 BuildRequires:  python-devel
+BuildRequires:  python-libvirt
 BuildArch:      noarch
 ExcludeArch:    ppc ppc64 s390 s390x 
 BuildRoot:      %{_tmppath}/%{name}-%{version}
@@ -43,10 +44,12 @@ mv %{buildroot}/%{_bindir}/virt-install %{buildroot}/%{_sbindir}/virt-install
 ln -s virtinst %{buildroot}%{python_sitelib}/xeninst
 ln -s virt-install %{buildroot}/%{_sbindir}/xenguest-install
 
+%find_lang virtinst
+
 %clean
 rm -rf %{buildroot}
 
-%files
+%files -f virtinst.lang
 %defattr(-,root,root)
 %doc README
 %{python_sitelib}/virtinst
