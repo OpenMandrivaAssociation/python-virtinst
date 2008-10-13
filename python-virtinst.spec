@@ -1,6 +1,6 @@
 %define module  virtinst
 %define name    python-%{name}
-%define version 0.300.3
+%define version 0.400.0
 %define release %mkrel 1
 
 Name: 		python-%{module}
@@ -55,12 +55,17 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc README
 %{python_sitelib}/virtinst
+%{python_sitelib}/virtconv
 %{python_sitelib}/xeninst
 %{python_sitelib}/*.egg-info
+%{_bindir}/virt-convert
+%{_bindir}/virt-pack
 %{_bindir}/virt-clone
 %{_bindir}/virt-image
 %{_sbindir}/virt-install
 %{_sbindir}/xenguest-install
+%{_mandir}/man1/virt-convert.1*
+%{_mandir}/man1/virt-pack.1*
 %{_mandir}/man1/virt-clone.1*
 %{_mandir}/man1/virt-image.1*
 %{_mandir}/man1/virt-install.1*
