@@ -1,7 +1,7 @@
 %define module  virtinst
 %define name    python-%{name}
 %define version 0.400.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 		python-%{module}
 Version: 	%{version}
@@ -11,6 +11,9 @@ License:    GPL
 Group: 		Development/Python
 Url:        http://virt-manager.et.redhat.com/
 Source:     http://virt-manager.et.redhat.com/download/sources/virtinst/%{module}-%{version}.tar.gz
+# (fhimpe) Patch from upstream hg repository which fixes parsing of 
+# Mandriva's /etc/sysconfig/keyboard
+Patch0:          virtinst-0.400-fix-keyboard-parsing.patch
 Requires:       python-libvirt >= 0.1.4-4
 Requires:       python-urlgrabber
 BuildRequires:  python-devel
@@ -33,6 +36,7 @@ virtinst in a command line mode.
 
 %prep
 %setup -q -n %{module}-%{version} 
+%patch0 -p1 -b .keyboard
 
 %build
 python setup.py build
