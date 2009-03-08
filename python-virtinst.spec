@@ -1,7 +1,7 @@
 %define module  virtinst
 %define name    python-%{name}
-%define version 0.400.1
-%define release %mkrel 2
+%define version 0.400.2
+%define release %mkrel 1
 
 Name: 		python-%{module}
 Version: 	%{version}
