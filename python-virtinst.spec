@@ -11,6 +11,29 @@ License:    GPL
 Group: 		Development/Python
 Url:        http://virt-manager.et.redhat.com/
 Source:     http://virt-manager.et.redhat.com/download/sources/virtinst/%{module}-%{version}.tar.gz
+# Fedora patches
+# Don't erroneously set limit for amount of virtio devices (RH bug #499654)
+Patch1: virtinst-0.500.0-virtio-dev-limit.patch
+# Don't use virtio for cdrom devices (RH bug #517151)
+Patch2: virtinst-0.500.0-virtio-cdrom.patch
+# Rawhide/F11 can auto detect keymapping (RH bug #487735)
+Patch3: virtinst-0.500.0-no-default-keymap.patch
+# Update test suite to verify patches
+Patch4: virtinst-0.500.0-update-testsuite.patch
+# Don't generate bogus disk driver XML.
+Patch5: virtinst-0.500.0-bogus-driver-xml.patch
+# Add '--disk format=' for specifying format (qcow2, ...) when provisioning
+Patch6: virtinst-0.500.0-disk-format.patch
+# Add Fedora12 to os dictionary
+Patch7: virtinst-0.500.0-f12-distro.patch
+# Don't use usermode net for non-root qemu:///system via virt-install
+Patch8: virtinst-0.500.0-nonroot-qemu-net.patch
+# Fix cdrom installs where the iso is a storage volume (bug #524109)
+Patch9: virtinst-0.500.0-no-iso-driver.patch
+# Fix path permissions for kernel/initrd download location (bug #523960)
+Patch10: virtinst-0.500.0-change-path-perms.patch
+# Update translations (bz 493795)
+Patch11: virtinst-0.500.0-more-translations.patch
 Requires:       python-libvirt >= 0.1.4-4
 Requires:       python-urlgrabber
 BuildRequires:  python-devel
@@ -32,7 +55,18 @@ Also contained is a simple script virt-install which uses
 virtinst in a command line mode.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{module}-%{version}
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch6 -p1
+%patch7 -p1
+%patch8 -p1
+%patch9 -p1
+%patch10 -p1
+%patch11 -p1
 
 %build
 python setup.py build
