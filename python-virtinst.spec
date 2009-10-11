@@ -1,7 +1,7 @@
 %define module  virtinst
 %define name    python-%{name}
 %define version 0.500.0
-%define release %mkrel 2
+%define release %mkrel 3
 
 Name: 		python-%{module}
 Version: 	%{version}
@@ -31,6 +31,7 @@ Patch8: virtinst-0.500.0-nonroot-qemu-net.patch
 # Fix cdrom installs where the iso is a storage volume (bug #524109)
 Patch9: virtinst-0.500.0-no-iso-driver.patch
 # Fix path permissions for kernel/initrd download location (bug #523960)
+# Disabled: breaks creation of vm if there's no qemu user
 Patch10: virtinst-0.500.0-change-path-perms.patch
 # Update translations (bz 493795)
 Patch11: virtinst-0.500.0-more-translations.patch
@@ -65,7 +66,7 @@ virtinst in a command line mode.
 %patch7 -p1
 %patch8 -p1
 %patch9 -p1
-%patch10 -p1
+#%patch10 -p1
 %patch11 -p1
 
 %build
