@@ -1,7 +1,7 @@
 %define module  virtinst
 %define name    python-%{name}
 %define version 0.500.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name: 		python-%{module}
 Version: 	%{version}
@@ -13,6 +13,7 @@ Url:        http://virt-manager.et.redhat.com/
 Source:     http://virt-manager.et.redhat.com/download/sources/virtinst/%{module}-%{version}.tar.gz
 # Fix interface API detection for libvirt < 0.7.4
 Patch1:         virtinst-%{version}-fix-interface-detect.patch 
+Patch2:		virtinst-%{version}-os.patch
 Requires:       python-libvirt >= 0.1.4-4
 Requires:       python-urlgrabber
 BuildRequires:  python-devel
@@ -36,6 +37,7 @@ virtinst in a command line mode.
 %prep
 %setup -q -n %{module}-%{version}
 %patch1 -p1
+%patch2
 
 %build
 python setup.py build
