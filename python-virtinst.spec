@@ -7,12 +7,14 @@ Name: 		python-%{module}
 Version: 	%{version}
 Release: 	%{release}
 Summary:    Python modules for starting Xen guest installations
-License:    GPL
+License:    GPLv2+
 Group: 		Development/Python
 Url:        http://virt-manager.et.redhat.com/
 Source:     http://virt-manager.et.redhat.com/download/sources/virtinst/%{module}-%{version}.tar.gz
 # Fix interface API detection for libvirt < 0.7.4
+# patch comes from upstream
 Patch1:         virtinst-%{version}-fix-interface-detect.patch 
+# patch sent upstream : https://bugzilla.redhat.com/show_bug.cgi?id=563190
 Patch2:		virtinst-%{version}-os.patch
 Requires:       python-libvirt >= 0.1.4-4
 Requires:       python-urlgrabber
