@@ -15,6 +15,7 @@ Source:     http://virt-manager.et.redhat.com/download/sources/virtinst/%{module
 Patch2:		virtinst-0.500.3-os.patch
 Requires:       python-libvirt >= 0.1.4-4
 Requires:       python-urlgrabber
+Requires:       python-libxml2
 BuildRequires:  python-devel
 BuildRequires:  python-libvirt
 BuildRequires:  python-libxml2
