@@ -1,7 +1,7 @@
 %define module  virtinst
 %define name    python-%{name}
-%define version 0.500.4
-%define release %mkrel 2
+%define version 0.500.5
+%define release %mkrel 1
 
 Name: 		python-%{module}
 Version: 	%{version}
@@ -11,8 +11,6 @@ License:    GPLv2+
 Group: 		Development/Python
 Url:        http://virt-manager.et.redhat.com/
 Source:     http://virt-manager.et.redhat.com/download/sources/virtinst/%{module}-%{version}.tar.gz
-# patch sent upstream : https://bugzilla.redhat.com/show_bug.cgi?id=563190
-Patch2:		virtinst-0.500.3-os.patch
 Requires:       python-libvirt >= 0.1.4-4
 Requires:       python-urlgrabber
 Requires:       python-libxml2
@@ -36,7 +34,6 @@ virtinst in a command line mode.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch2 -p 1
 
 %build
 python setup.py build
