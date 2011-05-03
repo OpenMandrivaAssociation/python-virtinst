@@ -1,6 +1,6 @@
 %define module  virtinst
 %define name    python-%{name}
-%define version 0.500.5
+%define version 0.500.6
 %define release %mkrel 1
 
 Name: 		python-%{module}
@@ -11,16 +11,16 @@ License:    GPLv2+
 Group: 		Development/Python
 Url:        http://virt-manager.et.redhat.com/
 Source:     http://virt-manager.et.redhat.com/download/sources/virtinst/%{module}-%{version}.tar.gz
-Requires:       python-libvirt >= 0.1.4-4
-Requires:       python-urlgrabber
-Requires:       python-libxml2
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  python-devel
 BuildRequires:  python-libvirt
 BuildRequires:  python-libxml2
 BuildRequires:  python-urlgrabber
 BuildArch:      noarch
 ExcludeArch:    ppc ppc64 s390 s390x 
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+Requires:       python-libvirt >= 0.1.4-4
+Requires:       python-urlgrabber
+Requires:       python-libxml2
 
 %description
 virtinst is a module to help in starting installations of Fedora/Red
