@@ -1,2 +1,4 @@
+removed_sources:
+  virtinst-0.600.1.tar.gz: 2c9a998ac62ebe8c60fac59757106b7f6cda90de
 sources:
-  "virtinst-0.600.1.tar.gz:"	2c9a998ac62ebe8c60fac59757106b7f6cda90de
+  virtinst-0.600.3.tar.gz: 906bf5be3cca23cda77486ea06655de23e4bcac4
