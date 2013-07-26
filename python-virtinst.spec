@@ -4,13 +4,13 @@
 %define release 1
 
 Name: 		python-%{module}
-Version: 	%{version}
-Release: 	%{release}
+Version: 	0.600.4
+Release: 	1
 Summary:    Python modules for starting Xen guest installations
 License:    GPLv2+
 Group: 		Development/Python
 Url:        http://virt-manager.et.redhat.com/
-Source:     http://virt-manager.et.redhat.com/download/sources/virtinst/%{module}-%{version}.tar.gz
+Source:     https://fedorahosted.org/released/python-virtinst/virtinst-%{version}.tar.gz
 BuildRequires:  python-devel
 BuildRequires:  python-libvirt
 BuildRequires:  python-libxml2
@@ -212,4 +212,5 @@ rm -rf %{buildroot}
 
 * Wed Dec 13 2006 Guillaume Rousse <guillomovitch@mandriva.org> 0.98.0-1mdv2007.1
 - first mdv release
+
 
