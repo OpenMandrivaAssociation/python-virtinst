@@ -1,11 +1,11 @@
 %define module  virtinst
 %define name    python-%{name}
 %define version 0.600.3
-%define release 1
+%define release 2
 
 Name: 		python-%{module}
 Version: 	0.600.4
-Release: 	1
+Release: 	2
 Summary:    Python modules for starting Xen guest installations
 License:    GPLv2+
 Group: 		Development/Python
