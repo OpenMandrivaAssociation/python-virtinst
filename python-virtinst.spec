@@ -9,7 +9,7 @@ Release: 	2
 Summary:    Python modules for starting Xen guest installations
 License:    GPLv2+
 Group: 		Development/Python
-Url:        http://virt-manager.et.redhat.com/
+Url:        https://virt-manager.et.redhat.com/
 Source:     https://fedorahosted.org/released/python-virtinst/virtinst-%{version}.tar.gz
 BuildRequires:  python-devel
 BuildRequires:  python-libvirt
